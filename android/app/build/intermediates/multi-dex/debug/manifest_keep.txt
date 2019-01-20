@@ -1,0 +1,3 @@
+# Referenced at /Users/brianlee/Documents/projects/LooChatMobile/android/app/build/intermediates/manifests/full/debug/AndroidManifest.xml:28
+-keep class com.messager.MainApplication { <init>(...); }
+
