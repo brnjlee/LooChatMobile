@@ -176,13 +176,9 @@ class Dashboard extends Component {
             }
             getUserMedia({
                 audio: true,
-                // THIS IS FOR SIMULATOR ONLY
-                // In fact, you better test on real iOS/Android device
-                // We just can test audio on simulator, so i set video = false
-                // video: Platform.OS === 'ios' ? false : {
                 video: {
                     mandatory: {
-                        minWidth: 500, // Provide your own width, height and frame rate here
+                        minWidth: 500,
                         minHeight: 300,
                         minFrameRate: 30
                     },
@@ -190,8 +186,6 @@ class Dashboard extends Component {
                     optional: (videoSourceId ? [{ sourceId: videoSourceId }] : [])
                 }
             }, (stream) => {
-                // use arrow function :)
-                // (stream) or stream are fine
                 console.log('Streaming OK', stream);
                 this.setState({
                     videoURL: stream.toURL()
